@@ -1,0 +1,65 @@
+:root {
+  --default-input-margin: 10px;
+
+  --input-gutter-sides: 10px;
+
+  --input-min-height: 24px;
+
+  --input-scaled-min-height:  2.08695652174em; /* NOTE: 24px when base is 11.5px */
+  --input-scaled-font-size:   0.88461538461em; /* NOTE: 11.5px when base is 13px */
+  --input-scaled-line-height: 1.30434782609em; /* NOTE: 15px when base is 11.5px */
+
+  --input-background-color:  var(--color-white-100);
+  --input-placeholder-color: var(--color-text-primary-light);
+
+  --input-border-color:  var(--color-gray-500);
+  --input-border-size:   1px;
+  --input-border-style:  solid;
+  --input-border:        var(--input-border-size) var(--input-border-style) var(--input-border-color);
+  --input-border-radius: 4px;
+
+  --input-disabled-bg-color:     var(--color-disabled-light);
+  --input-disabled-border-color: var(--input-disabled-bg-color);
+  --input-disabled-text-color:   var(--color-disabled-dark);
+
+  --input-invalid-border-color: var(--color-error-accent);
+  --input-invalid-border:       var(--input-border-size) var(--input-border-style) var(--input-invalid-border-color);
+
+
+  --input-checkbox-size: 1.1em;
+
+  --input-checkbox-disabled-bg-color:     var(--input-disabled-bg-color);
+  --input-checkbox-disabled-border-color: var(--input-disabled-border-color);
+  --input-checkbox-disabled-text-color:   var(--input-disabled-text-color);
+
+
+  --input-textbox-icon-size: calc(var(--input-gutter-sides) + 1em);
+
+
+  --input-select-height: var(--input-min-height);
+
+  --input-select-scaled-height:      var(--input-scaled-min-height);
+  --input-select-scaled-font-size:   var(--input-scaled-font-size);
+  --input-select-scaled-line-height: var(--input-scaled-line-height);
+
+  --input-select-disabled-bg-color:     var(--input-disabled-bg-color);
+  --input-select-disabled-border-color: var(--input-disabled-border-color);
+  --input-select-disabled-text-color:   var(--input-disabled-text-color);
+
+  --input-select-icon-size: var(--input-textbox-icon-size);
+
+  --input-select-clear-icon-text-color: var(--color-gray-500);
+
+  --input-select-arrow-icon-padding:   calc(var(--input-gutter-sides) / 2);
+  --input-select-arrow-icon-font-size: 1.35em;
+  --input-select-arrow-icon-size:      calc(var(--input-textbox-icon-size) - (var(--input-select-arrow-icon-font-size) - 1em));
+
+  --input-select-options-wrapper-top-bottom-padding: calc(var(--input-gutter-sides) / 2);
+
+  --input-select-option-gap:                 var(--input-gutter-sides);
+  --input-select-option-disabled-bg-color:   transparent;
+  --input-select-option-disabled-text-color: var(--color-disabled);
+  --input-select-option-focused-bg-color:    var(--color-primary);
+  --input-select-option-focused-text-color:  var(--color-text-secondary);
+  --input-select-option-selected-bg-color:   var(--color-highlight);
+}

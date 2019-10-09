@@ -1,0 +1,9 @@
+:root {
+  --badge-bg-color:           var(--color-gray-400);
+  --badge-text-color:         var(--color-gray-600);
+  --badge-padding-top-bottom: 2px;
+  --badge-padding-sides:      10px;
+
+  --badge-attention-text-color: var(--color-text-secondary);
+  --badge-attention-bg-color:   var(--color-red-500);
+}

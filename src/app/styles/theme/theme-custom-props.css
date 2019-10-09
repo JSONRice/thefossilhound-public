@@ -1,0 +1,66 @@
+@import "./theme-custom-props/app.css";
+@import "./theme-custom-props/badges.css";
+@import "./theme-custom-props/banners.css";
+@import "./theme-custom-props/buttons.css";
+@import "./theme-custom-props/containers.css";
+@import "./theme-custom-props/inputs.css";
+@import "./theme-custom-props/modals.css";
+@import "./theme-custom-props/text.css";
+
+:root {
+  --color-primary: var(--color-blue-500);
+  --color-primary-lightly-shaded: var(--color-blue-600);
+  --color-primary-dark: var(--color-blue-700);
+
+  --color-accent: var(--color-turquoise-500);
+
+  --color-important: var(--color-red-matte-600);
+
+  --color-disabled-light: var(--color-gray-400);
+  --color-disabled: var(--color-gray-500);
+  --color-disabled-dark: var(--color-gray-600);
+
+  --color-edit-group: var(--color-gray-400);
+  --color-edit-group-dark: var(--color-gray-500);
+
+  --color-positive: var(--color-green-500);
+  --color-positive-bright: var(--color-green-500-bright);
+  --color-positive-dark: var(--color-green-500-dark);
+
+  --color-negative: var(--color-red-500);
+  --color-negative-bright: var(--color-red-500-bright);
+  --color-negative-dark: var(--color-red-500-dark);
+
+  --color-neutral: var(--color-gray-600);
+  --color-neutral-dark: var(--color-gray-600-dark);
+
+  --color-info: var(--color-blue-100);
+  --color-info-accent: var(--color-blue-vibrant-500);
+  --color-info-dark: var(--color-blue-700);
+  --color-warning: var(--color-yellow-100);
+  --color-warning-accent: var(--color-yellow-300);
+
+  --color-error: var(--color-red-matte-200);
+  --color-error-accent: var(--color-red-matte-600);
+
+  --color-highlight: var(--color-info);
+  --color-highlight-accent: var(--color-info-accent);
+
+  --color-heading-underline: var(--color-gray-450);
+
+  --color-severity-low: var(--color-green-matte-300);
+  --color-severity-medium: var(--color-yellow-300);
+  --color-severity-high: var(--color-red-matte-600);
+
+  --default-border-radius: 5px;
+  --default-border-size: 1px;
+
+  --default-layout-section-gap: 10px;
+
+  --default-transition-duration: 300ms;
+  --default-transition-timing-function: ease-in-out;
+
+  --list-items-gap: 5px;
+
+  --popover-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}

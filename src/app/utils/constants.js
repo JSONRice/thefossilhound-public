@@ -1,0 +1,29 @@
+export const financialTransactionTypes = {
+  DISBURSEMENT: 202,
+  DISBURSEMENT_ADJUSTMENT: 2232,
+  DONATION: 201,
+  DONATION_ADJUSTMENT: 204,
+  DONATION_IN_KIND: 2160,
+  RECON_TRANSACTION: 2262,
+  TRANSFERS: 2157,
+  TELLER_ENTRY: 2260
+};
+
+export const transactionTypeTranslationLabel = {
+  INCOME: "label.income",
+  EXPENSE: "label.expense",
+  TRANSFER: "label.transfer"
+};
+
+export const responseStatus = {
+  OK: 200,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  METHOD_NOT_ALLOWED: 405,
+  INTERNAL_SERVER_ERROR: 500,
+  NOT_IMPLEMENTED: 501,
+  BAD_GATEWAY: 502,
+  SERVICE_UNAVAILABLE: 503,
+  GATEWAY_TIMEOUT: 504
+};

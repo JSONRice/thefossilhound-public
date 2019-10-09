@@ -1,0 +1,8 @@
+node_modules/
+.next/
+storybook-static/
+__snapshots__/
+out/
+package.json
+package-lock.json
+.cache/

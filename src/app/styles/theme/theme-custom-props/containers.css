@@ -1,0 +1,35 @@
+:root {
+  --container-gutter-100: 2.5px;
+  --container-gutter-200: 5px;
+  --container-gutter-300: 10px;
+  --container-gutter-400: 15px;
+  --container-gutter-500: 20px;
+
+  --container-margin: 24px;
+
+  --container-border-color:      var(--color-gray-400);
+  --container-border-dark-color: var(--color-gray-500);
+  --container-border-size:       1px;
+  --container-border-style:      solid;
+  --container-border:            var(--container-border-size) var(--container-border-style) var(--container-border-color);
+  --container-border-radius:     var(--default-border-radius);
+
+  --container-collapse-duration:        var(--default-transition-duration);
+  --container-collapse-timing-function: var(--default-transition-timing-function);
+
+  --container-bg-shaded-color:      var(--color-white-200);
+  --container-bg-shaded-dark-color: var(--color-gray-400);
+
+
+  --container-highlighted-group-gutter: 5px;
+
+
+  --split-details-list-section-gap: calc(2 * (var(--container-gutter-500) + var(--container-border-size)) + var(--container-margin));
+
+
+  --fieldset-item-column-gap-500: 15px;
+  --fieldset-item-row-gap-500:    10px;
+
+  --fieldset-item-column-gap-700: 20px;
+  --fieldset-item-row-gap-700:    15px;
+}

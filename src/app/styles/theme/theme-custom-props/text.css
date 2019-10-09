@@ -1,0 +1,46 @@
+:root {
+  --color-text-primary:       var(--color-black-700);
+  --color-text-primary-dark:  var(--color-black-900);
+  --color-text-primary-light: var(--color-gray-600);
+
+  --color-text-secondary: var(--color-white-100);
+
+
+  --font-family-sans:  'Open Sans', 'Zoram', 'noto sans', 'Helvetica', 'Arial', sans-serif;
+  --font-family-serif: 'Palatino', 'Palatino Linotype', 'Pahoran', 'Georgia', 'Times New Roman', serif;
+  --font-family-slab:  'Helam', 'Helvetica', 'Arial', sans-serif;
+
+
+  --font-size-100:             8px;
+  --font-size-100-line-height: 11px;
+
+  --font-size-200:             10px;
+  --font-size-200-line-height: 14px;
+
+  --font-size-300:             11px;
+  --font-size-300-line-height: 15px;
+
+  --font-size-400:             12px;
+  --font-size-400-line-height: 17px;
+
+  --font-size-500:             13px;
+  --font-size-500-line-height: 18px;
+
+  --font-size-600:             14px;
+  --font-size-600-line-height: 19px;
+
+  --font-size-700:             15px;
+  --font-size-700-line-height: 20px;
+
+  --font-size-800:             16px;
+  --font-size-800-line-height: 22px;
+
+  --font-size-850:             18px;
+  --font-size-850-line-height: 24px;
+
+  --font-size-890:             22px;
+  --font-size-890-line-height: 30px;
+
+  --font-size-900:             24px;
+  --font-size-900-line-height: 36px;
+}

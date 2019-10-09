@@ -1,0 +1,20 @@
+:root {
+  --button-min-height:         34px; /* NOTE: Magic Number */
+  --button-padding-top-bottom: 0;
+  --button-padding-sides:      10px;
+
+  --button-border-radius: 4px;
+  --button-border-size:   var(--default-border-size);
+
+
+  --button-icon-margin-right: 5px;
+
+
+  --button-small-min-height:             21px; /* NOTE: Magic Number */
+  --button-small-padding-top-bottom:     4px;  /* NOTE: Magic Number */
+  --button-small-has-icon-padding-sides: 5px;
+
+
+  --button-group-item-margin:       10px;
+  --button-group-item-margin-small: 5px;
+}

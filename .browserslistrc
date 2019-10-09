@@ -1,0 +1,9 @@
+# Based on current lds.org support list
+# see https://github.com/browserslist/browserslist
+# for details on how to customize for your needs
+Last 2 Chrome versions
+Last 1 Safari versions
+Last 1 Edge versions
+Last 1 Firefox versions
+Last 1 iOS versions
+Last 1 ChromeAndroid versions

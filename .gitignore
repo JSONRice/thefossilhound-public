@@ -1,0 +1,24 @@
+node_modules/
+.next/
+storybook-static/
+out/
+.DS_Store
+.env-secure
+logs
+*.log
+npm-debug.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+.idea/
+.vscode/
+.cache/
+
+# JetBrains IDEs
+.idea/
+*.iml

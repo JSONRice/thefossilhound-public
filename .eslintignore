@@ -1,0 +1,11 @@
+node_modules/
+.next/
+storybook-static/
+__snapshots__/
+out/
+.cache/
+build/
+lib/
+manifests/
+styles/
+_deprecated/

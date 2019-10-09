@@ -1,0 +1,9 @@
+:root {
+  --banner-min-height:    50px;
+  --banner-padding-sides: 25px;
+  --banner-border-size:   var(--default-border-size);
+
+  --banner-text-color: var(--color-gray-700);
+
+  --banner-list-item-gap: 20px;
+}

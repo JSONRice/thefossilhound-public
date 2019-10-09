@@ -1,0 +1,100 @@
+{
+  "headers": [
+    {
+      "label": "label.overview",
+      "feature": "OVERVIEW",
+      "dropdown": [
+        {
+          "label": "label.income.and.expense.summary",
+          "link": "#/income-expense",
+          "optionalLink": "#/income-expense-consolidated",
+          "feature": "OVERVIEW_INCOME_EXPENSE_SUMMARY"
+        },
+        {
+          "label": "label.income.and.expense.details",
+          "link": "#/income-expense/details",
+          "feature": "OVERVIEW_INCOME_EXPENSE_DETAIL"
+        }
+      ]
+    },
+    {
+      "label": "label.donations",
+      "link": "#/donations",
+      "feature": "DONATIONS_BATCHES_SUMMARY"
+    },
+    {
+      "label": "label.expenses",
+      "feature": "EXPENSES",
+      "link": "#/expenses"
+    },
+    {
+      "label": "label.transfers",
+      "link": "#/transfers",
+      "feature": "TRANSFERS"
+    },
+    {
+      "label": "label.participants",
+      "link": "#/participants",
+      "feature": "PARTICIPANT"
+    },
+    {
+      "label": "label.tithing.settlement",
+      "link": "#/tithing-settlement",
+      "feature": "TITHING_SETTLEMENT"
+    },
+    {
+      "label": "label.reports",
+      "feature": "REPORTS",
+      "dropdown": [
+        {
+          "label": "label.action.items",
+          "link": "#/reports/action_items",
+          "feature": "REPORTS_ACTION_ITEMS"
+        },
+        {
+          "label": "label.bank.supplies",
+          "link": "#/reports/bank_supplies",
+          "feature": "REPORTS_BANK_SUPPLIES"
+        },
+        {
+          "label": "label.budget",
+          "link": "#/reports/budget",
+          "feature": "REPORTS_BUDGET"
+        },
+        {
+          "label": "label.donations",
+          "link": "#/reports/donations",
+          "feature": "REPORTS_DONATIONS"
+        },
+        {
+          "label": "label.financial.statements",
+          "link": "#/reports/financial_statements",
+          "feature": "REPORTS_FINANCIAL_STATEMENTS"
+        },
+        {
+          "label": "label.payment.cards",
+          "link": "#/reports/payment_cards",
+          "instrumentIds": [9, 12],
+          "feature": "REPORTS_PAYMENT_CARDS"
+        }
+      ]
+    },
+    {
+      "label": "label.help",
+      "dropdown": [
+        {
+          "label": "label.help.contact.us",
+          "link": "link.help.contact.us"
+        },
+        {
+          "label": "label.help.center",
+          "link": "link.help.center"
+        },
+        {
+          "label": "label.financial.training.lessons",
+          "link": "link.help.financial.training.lessons"
+        }
+      ]
+    }
+  ]
+}

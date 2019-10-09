@@ -1,0 +1,23 @@
+@import './theme/theme.css';
+
+
+html,
+body,
+:global(#app) {
+    width:    100vw;
+    height:   100vh;
+    overflow: hidden;
+}
+
+
+html {
+    color:       var(--color-text-primary);
+    font-family: var(--font-family-sans);
+    font-size:   10px; /* FIXME: Should be 16px */
+    line-height: 1;
+}
+
+body {
+    font-size:   var(--font-size-500);
+    line-height: var(--font-size-500-line-height);
+}

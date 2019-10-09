@@ -1,0 +1,14 @@
+:root {
+  --app-gutter-top-bottom: 10px;
+  --app-gutter-sides:      15px;
+
+  --app-bg-color: var(--color-white-200);
+
+  --app-main-content-gutter:                       20px;
+  --app-main-content-border-size:                  1px;
+  --app-main-content-children-margin:              calc(var(--app-main-content-border-size) + var(--app-main-content-gutter));
+  --app-main-content-children-position-top-bottom: calc(var(--app-main-content-children-margin) + var(--app-gutter-top-bottom));
+  --app-main-content-children-position-sides:      calc(var(--app-main-content-children-margin) + var(--app-gutter-sides));
+
+  --app-content-bg-color: var(--color-white-100);
+}

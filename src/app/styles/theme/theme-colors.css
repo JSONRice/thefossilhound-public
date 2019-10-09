@@ -1,0 +1,55 @@
+:root {
+  --color-white-100: #fff; /* NAME: "Whitey White" */
+  --color-white-200: #f7f7f7; /* NAME: "Not Quite White" */
+
+  --color-black-700: #333; /* NAME: "Mostly Black Text" */
+  --color-black-900: #000; /* NAME: "Blackey Black Text" */
+
+  --color-gray-400: #e5e5e5; /* NAME: "Kinda Grey" */
+  --color-gray-450: #ddd;
+  --color-gray-500: #ccc; /* NAME: "Grey" */
+  --color-gray-550: #b2b2b2;
+  --color-gray-600: #8c8d8e; /* NAME: "Dark Grey" */
+  --color-gray-600-dark: color(#8c8d8e l(-15%) shade(15%));
+  --color-gray-700: #616266; /* NAME: "Cool Dark Grey" */
+  --color-gray-750: #4d4d55;
+
+  --color-red-500: #fc4338; /* NAME: "Danger Will Robinson" */
+  --color-red-500-bright: color(#fc4338 w(-15%));
+  --color-red-500-dark: color(#fc4338 l(-15%) shade(15%));
+
+  --color-red-matte-200: #f2dede;
+  --color-red-matte-300: #eed3d7;
+  --color-red-matte-600: #d2705a; /* NAME: "Sauron's Eye" */
+
+  --color-red-dull-500: #a94442;
+
+  --color-green-500: #5cb85c; /* NAME: "Success Green" */
+  --color-green-500-bright: color(#5cb85c w(-15%));
+  --color-green-500-dark: color(#5cb85c l(-15%) shade(15%));
+  --color-green-800: #417505; /* NAME: "Green Crayon" */
+
+  --color-green-matte-300: #cceaaf;
+
+  --color-blue-100: #dff5ff; /* NAME: "Blue Highlighter" */
+  --color-blue-400: #9bd; /* NAME: "Inactive Button Blue" */
+  --color-blue-500: #5381ac; /* NAME: "Header Blue" */
+  --color-blue-600: #3c729f;
+  --color-blue-700: #125687; /* NAME: "Header Selected" */
+
+  --color-blue-bright-400: #98caff; /* NAME: "Info Button Blue" */
+  --color-blue-bright-500: #73b5fb; /* NAME: "Not so Boring Blue" */
+  --color-blue-bright-800: #3477bb; /* NAME: "Button Blue" */
+  --color-blue-bright-800-bright: color(#3477bb w(-15%));
+  --color-blue-bright-800-dark: color(#3477bb l(-15%) shade(15%));
+
+  --color-blue-vibrant-500: #24d2fb; /* NAME: "Vibrant Border Blue" */
+
+  --color-turquoise-500: #39c; /* NAME: "Linky Blue" */
+
+  --color-yellow-100: #fffcdc; /* NAME: "Yellow Highlighter" */
+  --color-yellow-300: #fff58b; /* NAME: "Yellow Border" */
+  --color-yellow-500: #f3ca02; /* NAME: "Puke Yellow" */
+
+  --color-yellow-matte-600: #e0d69c; /* NAME: "Ugly Yellow Border" */
+}
