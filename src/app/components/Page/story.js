@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { storiesOf } from "@storybook/react";
 import styled from "styled-components";
-import Page from "./Page";
+import { Page } from "./index";
 import navData from "../../data/navData";
 import { security } from "../UnitSelector/UnitSelector.story";
 
@@ -31,7 +31,8 @@ const store = {
       security: security
     };
   },
-  subscribe: () => {}
+  subscribe: () => {
+  }
 };
 
 storiesOf("Page", module)
@@ -42,9 +43,9 @@ storiesOf("Page", module)
        * Static files can be put in the "src/app/static" folder, then referenced with "/static/myfile".
        * Source: https://nextjs.org/docs/#static-file-serving-eg-images
        */}
-      <StyledImage src="/static/temple1.jpg" alt="placeholder" />
-      <StyledImage src="/static/temple2.jpg" alt="placeholder" />
-      <StyledImage src="/static/temple3.jpg" alt="placeholder" />
+      <StyledImage src="/static/temple1.jpg" alt="placeholder"/>
+      <StyledImage src="/static/temple2.jpg" alt="placeholder"/>
+      <StyledImage src="/static/temple3.jpg" alt="placeholder"/>
       <TextColumn>
         <p>{`${LOREM_IPSUM_HISTORY}`}</p>
       </TextColumn>
@@ -52,45 +53,42 @@ storiesOf("Page", module)
   ))
   .add("Page without ResponsiveMenu", () => (
     <Page title="Page without Menu" includeMenu={false}>
-      <Grid gapSize="16" rowGapSize="24">
-        {/**
-         * Static files can be put in the "src/app/static" folder, then referenced with "/static/myfile".
-         * Source: https://nextjs.org/docs/#static-file-serving-eg-images
-         */}
-        <StyledImage src="/static/temple1.jpg" alt="placeholder" />
-        <StyledImage src="/static/temple2.jpg" alt="placeholder" />
-        <StyledImage src="/static/temple3.jpg" alt="placeholder" />
-        <TextColumn>
-          <p>{`${LOREM_IPSUM_HISTORY}`}</p>
-        </TextColumn>
-      </Grid>
+      {/**
+       * Static files can be put in the "src/app/static" folder, then referenced with "/static/myfile".
+       * Source: https://nextjs.org/docs/#static-file-serving-eg-images
+       */}
+      <StyledImage src="/static/temple1.jpg" alt="placeholder"/>
+      <StyledImage src="/static/temple2.jpg" alt="placeholder"/>
+      <StyledImage src="/static/temple3.jpg" alt="placeholder"/>
+      <TextColumn>
+        <p>{`${LOREM_IPSUM_HISTORY}`}</p>
+      </TextColumn>
     </Page>
   ))
   .add("Page with Breadcrumbs", () => {
     return (
       <Page
-        title="Page without Menu"
+        title="Page with Breadcrumbs"
         breadcrumbItems={[
           { title: "Sushi", url: "/sushi" },
           { title: "Nigiri", url: "/nigiri" }
         ]}
       >
-        <Grid gapSize="16" rowGapSize="24">
-          {/**
-           * Static files can be put in the "src/app/static" folder, then referenced with "/static/myfile".
-           * Source: https://nextjs.org/docs/#static-file-serving-eg-images
-           */}
-          <StyledImage src="/static/temple1.jpg" alt="placeholder" />
-          <StyledImage src="/static/temple2.jpg" alt="placeholder" />
-          <StyledImage src="/static/temple3.jpg" alt="placeholder" />
-          <TextColumn>
-            <p>{`${LOREM_IPSUM_HISTORY}`}</p>
-          </TextColumn>
-        </Grid>
+        {/**
+         * Static files can be put in the "src/app/static" folder, then referenced with "/static/myfile".
+         * Source: https://nextjs.org/docs/#static-file-serving-eg-images
+         */}
+        <StyledImage src="/static/temple1.jpg" alt="placeholder"/>
+        <StyledImage src="/static/temple2.jpg" alt="placeholder"/>
+        <StyledImage src="/static/temple3.jpg" alt="placeholder"/>
+        <TextColumn>
+          <p>{`${LOREM_IPSUM_HISTORY}`}</p>
+        </TextColumn>
       </Page>
     );
-  })
-  .addParameters({ viewport: { defaultViewport: 'iphone6' }})
-  .add("Page on phone", () => {
-    return;
   });
+  // TODO: fix this since storybook was just updated
+  // .addParameters({ viewport: { defaultViewport: "iphone6" } })
+  // .add("Page on phone", () => {
+  //   return;
+  // });

@@ -1,0 +1,40 @@
+.navbar {
+  border-radius: 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand > img {
+  height: 30px;
+}
+
+.navLinks {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+.navLinks:hover {
+  color: turquoise;
+  border-left: 1px solid turquoise;
+  border-right: 1px solid turquoise;
+  padding: 1em 1em;
+}
+
+#twist {
+  color: blue;
+}
+
+.loggedInAs {
+  font-style: italic;
+}
+
+a.active {
+  color: #000000 !important;
+  text-decoration: underline !important;
+}

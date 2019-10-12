@@ -17,12 +17,11 @@ const Content = styled.div`
   display: grid;
   font-family: ${({ theme }) => theme.font.fontFamilySans};
   ${({ theme }) => theme.fontSize(12)};
-  color: ${({ theme }) => theme.color.gray800};
+  color: ${({ theme }) => theme.color.gray1600};
   line-height: 20px;
   grid-column-start: 2;
   grid-column-end: 3;
-  background-color: white;
-  margin-top: 20px;
+  margin-top: 20px;  
 
   @media (max-width: 768px) {
     grid-column-start: 1;
@@ -46,14 +45,18 @@ const PageContainerGrid = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    padding: 25px;
   }
+  
+  background-color: #333;
+  color: white;    
+  
 `;
 
 const StyledHeader = styled.h1`
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid black;
-  color: black;
+  border-bottom: 2px solid ${({ theme }) => theme.color.gray1600};
   // Consider putting all this into styled-components@beta createGlobalStyle and apply to h1,h2,h3,h4,h5,h6
   font-family: ${({ theme }) => theme.font.fontFamilyHelamSlab};
   font-style: normal;

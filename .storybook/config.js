@@ -1,14 +1,16 @@
 import React from "react";
 import { configure, addDecorator } from "@storybook/react";
-import App from "./Other";
+import App from "./App";
 import { ThemeProvider } from "styled-components";
 import theme from "../src/app/styles/theme";
 import { addParameters } from "@storybook/react";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport/dist/defaults";
+import "../src/app/styles/bootstrap.min.css";
+import "../src/app/styles/theme/theme-custom-props/carousel.css";
+import "../src/app/styles/theme/theme-custom-props/header.css";
 
 function loadStories() {
   const req = require.context("../src/app", true, /.story.js$/);
-  console.log('req\'s: ', req.keys());
   req.keys().forEach(filename => req(filename));
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Page from "../../components/Page/Page";
+import { Page } from "../../components/Page";
 import { LocalLink } from "../../components/LocalLink";
 import { formatCurrency, formatCurrencyWithSymbol } from "../../utils/formatters";
 import { getLocale } from "../../utils/initialization";

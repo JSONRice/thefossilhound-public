@@ -63,6 +63,7 @@ export const gray1200 = "#ededed";
 export const gray1300 = "#4c4c4e";
 export const gray1400 = "#777";
 export const gray1500 = "#c4c4c4";
+export const gray1600 = "#9d9d9d";
 //------------------------
 
 export const red500 = "#fc4338"; /* NAME: "Danger Will Robinson" */

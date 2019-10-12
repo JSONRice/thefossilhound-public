@@ -5,6 +5,14 @@ import { createGlobalStyle } from "styled-components";
  * These should go into their own separate file and imported in once. Same story for _app.js Need to come up with a strategy for globla styles.
  */
 const GlobalStyle = createGlobalStyle`
+
+
+  html {
+    height: 100%;
+    background-color: #333;
+    color: #9d9d9d;    
+  }
+
   /* region Open Sans */
   
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');

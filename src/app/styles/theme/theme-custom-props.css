@@ -6,6 +6,8 @@
 @import "./theme-custom-props/inputs.css";
 @import "./theme-custom-props/modals.css";
 @import "./theme-custom-props/text.css";
+@import "./theme-custom-props/carousel.css";
+@import "./theme-custom-props/header.css";
 
 :root {
   --color-primary: var(--color-blue-500);

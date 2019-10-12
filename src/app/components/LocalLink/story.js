@@ -31,88 +31,80 @@ const Content = styled.div`
 
 storiesOf("LocalLink", module)
   .add("Accessible Internal Link", () => (
-    <Grid>
-      <Content>
-        <p>
-          LCRF Link is just a Higher Order Component (wrapper) that returns a link component if the hasAccess is true
-          else just the href text is rendered as plain text.
-        </p>
-        <p>
-          <b>
-            Since you're in a Storybook all Next Link components won't work but here's an accessible based Next link to
-            (see log in console): <LocalLink href={"/donations"}>donations</LocalLink>
-          </b>
-        </p>
-        <p>
-          Avoid using the NextJS link under next/link since that doesn't check if a user has access to link to content
-          unless you're absolutely sure anyone should be allowed to navigate to that content.
-        </p>
-      </Content>
-    </Grid>
+    <Content>
+      <p>
+        LCRF Link is just a Higher Order Component (wrapper) that returns a link component if the hasAccess is true
+        else just the href text is rendered as plain text.
+      </p>
+      <p>
+        <b>
+          Since you're in a Storybook all Next Link components won't work but here's an accessible based Next link to
+          (see log in console): <LocalLink href={"/donations"}>donations</LocalLink>
+        </b>
+      </p>
+      <p>
+        Avoid using the NextJS link under next/link since that doesn't check if a user has access to link to content
+        unless you're absolutely sure anyone should be allowed to navigate to that content.
+      </p>
+    </Content>
   ))
   .add("Accessible Internal Link with no styling", () => (
-    <Grid>
-      <Content>
-        <p>
-          LCRF Link is just a Higher Order Component (wrapper) that returns a link component if the hasAccess is true
-          else just the href text is rendered as plain text.
-        </p>
-        <p>
-          <b>
-            Since you're in a Storybook all Next Link components won't work but here's an accessible based Next link to
-            (see log in console):{" "}
-            <LocalLink href={"/donations"} noColor={true} noDecoration={true}>
-              donations
-            </LocalLink>
-          </b>
-        </p>
-        <p>
-          Avoid using the NextJS link under next/link since that doesn't check if a user has access to link to content
-          unless you're absolutely sure anyone should be allowed to navigate to that content.
-        </p>
-      </Content>
-    </Grid>
+    <Content>
+      <p>
+        LCRF Link is just a Higher Order Component (wrapper) that returns a link component if the hasAccess is true
+        else just the href text is rendered as plain text.
+      </p>
+      <p>
+        <b>
+          Since you're in a Storybook all Next Link components won't work but here's an accessible based Next link to
+          (see log in console):{" "}
+          <LocalLink href={"/donations"} noColor={true} noDecoration={true}>
+            donations
+          </LocalLink>
+        </b>
+      </p>
+      <p>
+        Avoid using the NextJS link under next/link since that doesn't check if a user has access to link to content
+        unless you're absolutely sure anyone should be allowed to navigate to that content.
+      </p>
+    </Content>
   ))
   .add("Accessible External Link", () => (
-    <Grid>
-      <Content>
-        <p>
-          LCRF Link is just a Higher Order Component (wrapper) that returns a link component if the hasAccess is true
-          else just the href text is rendered as plain text.
-        </p>
-        <p>
-          <b>
-            Since you're in a Storybook all Next Link components won't work but here's an accessible based Next link to
-            (see log in console): <LocalLink href={"www.lds.org"}>LDS Home</LocalLink>
-          </b>
-        </p>
-        <p>
-          Avoid using the NextJS link under next/link since that doesn't check if a user has access to link to content
-          unless you're absolutely sure anyone should be allowed to navigate to that content.
-        </p>
-      </Content>
-    </Grid>
+    <Content>
+      <p>
+        LCRF Link is just a Higher Order Component (wrapper) that returns a link component if the hasAccess is true
+        else just the href text is rendered as plain text.
+      </p>
+      <p>
+        <b>
+          Since you're in a Storybook all Next Link components won't work but here's an accessible based Next link to
+          (see log in console): <LocalLink href={"www.lds.org"}>LDS Home</LocalLink>
+        </b>
+      </p>
+      <p>
+        Avoid using the NextJS link under next/link since that doesn't check if a user has access to link to content
+        unless you're absolutely sure anyone should be allowed to navigate to that content.
+      </p>
+    </Content>
   ))
   .add("Inaccessible Internal Link", () => (
-    <Grid>
-      <Content title="Link is not accessible (hasAccess set to false)" includeMenu={false}>
-        <p>
-          LCRF Link is just a Higher Order Component (wrapper) that returns a link component if the hasAccess is true
-          else just the href text is rendered as plain text.
-        </p>
-        <p>
-          <b>
-            Since you're in a Storybook all Next Link components won't work but here's an accessible based Next link to
-            (see log in console):{" "}
-            <LocalLink hasAccess={false} href={"/donations"}>
-              donations
-            </LocalLink>
-          </b>
-        </p>
-        <p>
-          Avoid using the NextJS link under next/link since that doesn't check if a user has access to link to content
-          unless you're absolutely sure anyone should be allowed to navigate to that content.
-        </p>
-      </Content>
-    </Grid>
+    <Content title="Link is not accessible (hasAccess set to false)" includeMenu={false}>
+      <p>
+        LCRF Link is just a Higher Order Component (wrapper) that returns a link component if the hasAccess is true
+        else just the href text is rendered as plain text.
+      </p>
+      <p>
+        <b>
+          Since you're in a Storybook all Next Link components won't work but here's an accessible based Next link to
+          (see log in console):{" "}
+          <LocalLink hasAccess={false} href={"/donations"}>
+            donations
+          </LocalLink>
+        </b>
+      </p>
+      <p>
+        Avoid using the NextJS link under next/link since that doesn't check if a user has access to link to content
+        unless you're absolutely sure anyone should be allowed to navigate to that content.
+      </p>
+    </Content>
   ));

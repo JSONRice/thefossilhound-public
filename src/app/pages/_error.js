@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Page from "../components/Page/Page";
 import theme from "../styles/theme";
+import { Page } from "../components/Page";
 
 const ErrorWrap = styled.div`
   flex: 1;

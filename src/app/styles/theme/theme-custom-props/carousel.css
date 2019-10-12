@@ -1,0 +1,24 @@
+/* react-bootstrap carousel overrides */
+
+.carousel-caption {
+  font-family: Arial SansSerif;
+  color: #9d9d9d;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 25px;
+  padding: 10px 15px 20px 15px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  height: 600px;
+  max-width: 100%;
+  margin: auto;
+}
+
+@media (max-width: 767px) {
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    height: 300px;
+    width: 100%;
+  }
+}
