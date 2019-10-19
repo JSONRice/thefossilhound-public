@@ -1,5 +1,5 @@
 {
-  "name": "thefossilhound",
+  "name": "thefossilhound-public",
   "version": "1.0.1",
   "private": true,
   "description": "",
@@ -14,7 +14,7 @@
     "dev": "nodemon -w src/server -r esm src/server/index.js",
     "precommit": "cross-env NODE_ICU_DATA=node_modules/full-icu lint-staged",
     "start": "cross-env NODE_ENV=production node --icu-data-dir=node_modules/full-icu -r esm src/server/index.js",
-    "storybook": "npx cross-env NODE_ENV=development IS_STORYBOOK=true npx start-storybook -p 9902 -c .storybook -s src/app/static",
+    "storybook": "npx cross-env NODE_ENV=development IS_STORYBOOK=true npx start-storybook -p 9902 -c .storybook -s src/app/public",
     "verify": "npm run lint && npm run test",
     "lint": "eslint .",
     "test": "node --icu-data-dir=node_modules/full-icu node_modules/jest/bin/jest.js --no-cache --detectOpenHandles --config jest.config.js",
@@ -66,7 +66,7 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "source-map": "^0.7.3",
-    "source-map-support": "^0.4.3",
+    "source-map-support": "^0.5.13",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {

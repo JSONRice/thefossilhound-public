@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
-import { Page } from "../components/Page";
+// import { Page } from "../components/Page";
 
 const ErrorWrap = styled.div`
   flex: 1;
@@ -58,14 +58,17 @@ class ErrorPage extends React.Component {
     const title = this.getTitle(statusCode);
     const message = this.getMessage(statusCode);
 
-    return (
-      <Page includeHeader={false}>
-        <ErrorWrap>
-          <Title>{title}</Title>
-          <Message>{message}</Message>
-        </ErrorWrap>
-      </Page>
-    );
+    // TODO: add the Page component in
+    // return (
+    //   <Page includeHeader={false}>
+    //     <ErrorWrap>
+    //       <Title>{title}</Title>
+    //       <Message>{message}</Message>
+    //     </ErrorWrap>
+    //   </Page>
+    // );
+
+    return <h2>{this.getTitle()}</h2>;
   }
 }
 
