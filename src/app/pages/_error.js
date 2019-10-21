@@ -15,7 +15,7 @@ const Title = styled.h2`
   font-family: ${theme.font.fontFamilyHelamSlab};
   font-style: normal;
   font-weight: 200;
-  color: ${theme.color.black1200};
+  color: ${({ theme }) => theme.color.black1200};
   margin: 5px 0;
   ${theme.fontSize(16)};
   line-height: 26px;
