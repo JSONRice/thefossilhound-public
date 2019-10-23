@@ -8,7 +8,6 @@ const theme = {
     mobileMax: 766,
     tabletMax: 991
   },
-
   // Icons
   icons: {
     ...icons

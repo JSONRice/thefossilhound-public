@@ -9,33 +9,26 @@ import "../src/app/styles/bootstrap.min.css";
 import "../src/app/styles/theme/theme-custom-props/carousel.css";
 import "../src/app/styles/theme/theme-custom-props/header.css";
 
-function loadStories() {
+const loadStories = () => {
   const req = require.context("../src/app", true, /.story.js$/);
   req.keys().forEach(filename => req(filename));
-}
+};
 
 addDecorator(story => (
   <App>
-    <ThemeProvider theme={theme}>
-      {story()}
-    </ThemeProvider>
+    <ThemeProvider theme={theme}>{story()}</ThemeProvider>
   </App>
 ));
 
-const mountPointIds = [
-  "modals",
-  "toasts"
-];
+const mountPointIds = ["modals", "toasts"];
 
 mountPointIds.forEach(function(mountPointId) {
   if (document.getElementById(mountPointId) == null) {
     const $mountPoint = document.createElement("div");
     $mountPoint.setAttribute("id", mountPointId);
-    document.body.append($mountPoint)
+    document.body.append($mountPoint);
   }
 });
-
-
 
 configure(loadStories, module);
 
@@ -66,7 +59,7 @@ addParameters({
     type: "desktop",
 
     viewports: {
-      ...INITIAL_VIEWPORTS,
+      ...INITIAL_VIEWPORTS
       /* Add any additional custom viewports here. Just follow the same format as is in INITIAL_VIEWPORTS. */
     }
   }
