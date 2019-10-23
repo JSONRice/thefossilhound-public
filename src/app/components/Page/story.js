@@ -39,12 +39,12 @@ storiesOf("Page", module)
   .add("Default", () => (
     <Page title="Page with Menu (default)">
       {/**
-       * Static files can be put in the "src/app/static" folder, then referenced with "/static/myfile".
+       * Static files can be put in the "src/app/public" folder, then referenced with "/public/myfile".
        * Source: https://nextjs.org/docs/#static-file-serving-eg-images
        */}
-      <StyledImage src="/static/temple1.jpg" alt="placeholder" />
-      <StyledImage src="/static/temple2.jpg" alt="placeholder" />
-      <StyledImage src="/static/temple3.jpg" alt="placeholder" />
+      <StyledImage src="/public/sharkteeth.jpg" alt="placeholder" />
+      <StyledImage src="/public/temple2.jpg" alt="placeholder" />
+      <StyledImage src="/public/temple3.jpg" alt="placeholder" />
       <TextColumn>
         <p>{`${LOREM_IPSUM_HISTORY}`}</p>
       </TextColumn>

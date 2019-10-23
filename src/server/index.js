@@ -33,7 +33,7 @@ app
     server.listen(port, err => {
       if (err) throw err;
       // eslint-disable-next-line no-console
-      logger.info(`Listening at: ${process.env.HOST}`);
+      logger.info(`Listening at: ${process.env.HOST}:${process.env.PORT}`);
     });
   })
   .catch(ex => {

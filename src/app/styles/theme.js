@@ -3,6 +3,12 @@ import * as fontSizes from "./theme-font-sizes";
 import * as icons from "./theme-icons";
 
 const theme = {
+  // MediaQueries
+  media: {
+    mobileMax: 766,
+    tabletMax: 991
+  },
+
   // Icons
   icons: {
     ...icons
