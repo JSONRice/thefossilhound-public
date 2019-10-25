@@ -38,7 +38,7 @@ const Header = styled(Content)`
 // Overall grid with a 3x3 matrix. The left and right columns are simply gutters.
 const PageContainerGrid = styled.div`
   display: grid;
-  grid-template-columns: 0.475fr 2fr 0.475fr;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;

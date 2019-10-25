@@ -25,6 +25,8 @@ import { darken as polishedDarken, saturate, shade } from "polished";
 // 0% — 00
 ////
 
+export const captionText = "#fff";
+
 export const white100 = "#fff"; /* NAME: "Whitey White" */
 export const white200 = "#f7f7f7"; /* NAME: "Not Quite White" */
 export const white300 = "#fff";
