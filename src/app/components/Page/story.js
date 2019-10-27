@@ -83,8 +83,3 @@ storiesOf("Page", module)
       </Page>
     );
   });
-// TODO: fix this since storybook was just updated
-// .addParameters({ viewport: { defaultViewport: "iphone6" } })
-// .add("Page on phone", () => {
-//   return;
-// });
