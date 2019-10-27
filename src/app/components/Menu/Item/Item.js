@@ -118,10 +118,10 @@ export const Item = ({
           {label === "Home" ? (
             <HomeIcon alt="Home Icon" src="/icon-home.png" />
           ) : (
-            <React.Fragment>
+            <>
               {label}
               {entries && entries.length > 0 && !isTablet && !isMobile && <Arrow />}
-            </React.Fragment>
+            </>
           )}
         </Label>
       </ConditionalLink>
