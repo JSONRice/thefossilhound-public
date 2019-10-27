@@ -45,7 +45,7 @@ const PageContainerGrid = styled.div`
     padding: 25px;
   }
   
-  background-color: #333;
+  background-color: ${({ theme }) => theme.color.black700};
   color: white;    
   
 `;
@@ -64,9 +64,17 @@ const StyledHeader = styled.h1`
 `;
 
 class Page extends Component {
-  state = {
-    isMobile: false
-  };
+  constructor(props) {
+    super(props);
+    const { title, router } = this.props;
+    if (router) {
+      let breadCrumbService = new BreadcrumbService();
+      breadCrumbService.push(title, router.asPath);
+    }
+    this.state = {
+      isMobile: false
+    };
+  }
 
   handleResize = () => {
     let isMobile = false;
@@ -78,14 +86,6 @@ class Page extends Component {
       this.setState({ isMobile });
     }
   };
-
-  componentWillMount() {
-    const { title, router } = this.props;
-    if (router) {
-      let breadCrumbService = new BreadcrumbService();
-      breadCrumbService.push(title, router.asPath);
-    }
-  }
 
   componentDidMount() {
     this.handleResize();

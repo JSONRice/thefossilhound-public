@@ -1,7 +1,7 @@
 /* react-bootstrap carousel overrides */
 
 .carousel-caption {
-  font-family: Arial SansSerif;
+  font-family: Arial SansSerif sans-serif;
   color: #9d9d9d;
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 25px;

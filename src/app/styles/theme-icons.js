@@ -3,7 +3,7 @@
  * See: https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css
  * List on W3C Schools: https://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp
  */
-export const menuHamburger = "\\e236";
+export const menuHamburger = "\\e236"; // From Glyphicons halflings
 export const triangleRight = "\\e250"; // From Glyphicons halflings
 export const triangleBottom = "\\e252"; // From Glyphicons halflings
 export const home = "\\e021";

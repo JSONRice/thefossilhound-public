@@ -4,11 +4,7 @@ export const buildUrl = (href, hooks = {}) => {
   let url = `${href}`;
   if (Object.keys(hooks).length > 0) {
     Object.keys(hooks).forEach((key, index) => {
-      if (index === 0) {
-        url = `${url}?`;
-      } else {
-        url = `${url}&`;
-      }
+      url = index === 0 ? `${url}?` : `${url}&`;
       url = `${url}${key}=${hooks[key]}`;
     });
   }
