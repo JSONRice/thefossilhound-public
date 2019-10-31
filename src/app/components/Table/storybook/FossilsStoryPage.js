@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Table } from "../Table";
-import { HeaderCell } from "../HeaderCell";
-import { LocalLink } from "../../LocalLink";
-import { formatDate } from "../../../utils/formatters";
 import { ColumnConfiguration } from "../../../utils/column-configuration";
 import { TableHeaderConstants } from "../../../utils/table-header-constants";
 
