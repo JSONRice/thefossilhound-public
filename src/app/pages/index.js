@@ -1,8 +1,26 @@
 import * as React from "react";
 import { Col, Row } from "react-bootstrap";
 import { AppCarousel } from "../components/AppCarousel";
-// import { LinkWithTooltip } from "../components/LinkWithTooltip";
+import { LinkWithTooltip } from "../components/LinkWithTooltip";
 import { Page } from "../components/Page";
+import style from "styled-components";
+
+const TopRow = style(Row)`
+  display: flex;
+  justify-content: center;
+`;
+
+const BottomRow = style(Col)`
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 0;
+`;
+
+const BottomRowText = style.p`
+  ${props => ({ theme }) => theme.fontSize(props.fontSize)};
+  cursor: default;
+`;
 
 const Home = () => {
   const images = [
@@ -45,37 +63,36 @@ const Home = () => {
     }
   ];
 
-  // const _tooltipMYA =
-  //   <LinkWithTooltip
-  //     tooltip={<span>Million Years Ago</span>}
-  //     href="#"
-  //     id="tooltipMYA"
-  //     placement="top"
-  //     children={<span>MYA</span>}/>;
-
-  const homeTitle = "Celebrating the Richness of Paleontology through Fossil Hunting";
+  const _tooltipMYA = (
+    <LinkWithTooltip
+      tooltip={<span>Million Years Ago</span>}
+      href="#"
+      id="tooltipMYA"
+      placement="top"
+      children={<span>MYA</span>}
+    />
+  );
 
   return (
-    <Page title={homeTitle}>
-      <Row>
-        <Col xs={12} md={6} lg={12} className="flex-center">
+    <Page title="The Paleo Guy: Fossil Hunting, Preparation, and Discoveries...">
+      <TopRow>
+        <Col xs={12} md={12} lg={12} xl={12}>
           <AppCarousel defaultUri={"#"} images={images} />
         </Col>
-        <Col xs={12} md={6} lg={12} className="flex-center">
-          <br />
-        </Col>
-        <Col xs={12} md={6} lg={12}>
-          <p className="lead">
+      </TopRow>
+      <BottomRow>
+        <Col xs={12} md={12} lg={12} xl={12}>
+          <BottomRowText fontSize={16}>
             Welcome to <span style={{ textDecoration: "underline" }}>The Paleo Guy</span>. My name is Jason. In July
             2017 I moved out to Lehi, Utah with my family. Life has never been the same since. I'm a Software Engineer
             working for a consultant firm in Riverton. I really enjoy spending time in the great outdoors of Utah but my
             real passion lies in Paleontology or the study of ancient life. This web site was developed from the ground
             up and showcases my fossils both collected by myself, purchased, and traded. I really enjoy studying ancient
-            {/*marine life in particular from the pre-Cambrian all the way up to the Miocene (5 {_tooltipMYA}).*/}
-            Feel free to navigate through this site and I hope you enjoy what you find.
-          </p>
+            marine life in particular from the pre-Cambrian all the way up to the Miocene (5 {_tooltipMYA}). Feel free
+            to navigate through this site and I hope you enjoy what you find.
+          </BottomRowText>
         </Col>
-      </Row>
+      </BottomRow>
     </Page>
   );
 };

@@ -53,7 +53,7 @@ storiesOf("Page", module)
   .add("Page without ResponsiveMenu", () => (
     <Page title="Page without Menu" includeMenu={false}>
       {/**
-       * Static files can be put in the "src/app/static" folder, then referenced with "/static/myfile".
+       * Static files can be put in the "src/app/public" folder, then referenced with "/myfile".
        * Source: https://nextjs.org/docs/#static-file-serving-eg-images
        */}
       <StyledImage src="/temple1.jpg" alt="placeholder" />
@@ -71,7 +71,7 @@ storiesOf("Page", module)
         breadcrumbItems={[{ title: "Sushi", url: "/sushi" }, { title: "Nigiri", url: "/nigiri" }]}
       >
         {/**
-         * Static files can be put in the "src/app" folder, then referenced with "/myfile".
+         * Static files can be put in the "src/app/public" folder, then referenced with "/myfile".
          * Source: https://nextjs.org/docs/#static-file-serving-eg-images
          */}
         <StyledImage src="/temple1.jpg" alt="placeholder" />

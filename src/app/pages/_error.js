@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
-// import { Page } from "../components/Page";
+import { Page } from "../components/Page";
 
 const ErrorWrap = styled.div`
   flex: 1;
@@ -15,7 +15,7 @@ const Title = styled.h2`
   font-family: ${theme.font.fontFamilyHelamSlab};
   font-style: normal;
   font-weight: 200;
-  color: ${({ theme }) => theme.color.black1200};
+  color: ${theme.color.black1200};
   margin: 5px 0;
   ${theme.fontSize(16)};
   line-height: 26px;
@@ -58,17 +58,14 @@ class ErrorPage extends React.Component {
     const title = this.getTitle(statusCode);
     const message = this.getMessage(statusCode);
 
-    // TODO: add the Page component in
-    // return (
-    //   <Page includeHeader={false}>
-    //     <ErrorWrap>
-    //       <Title>{title}</Title>
-    //       <Message>{message}</Message>
-    //     </ErrorWrap>
-    //   </Page>
-    // );
-
-    return <h2>{this.getTitle()}</h2>;
+    return (
+      <Page includeHeader={false}>
+        <ErrorWrap>
+          <Title>{title}</Title>
+          <Message>{message}</Message>
+        </ErrorWrap>
+      </Page>
+    );
   }
 }
 

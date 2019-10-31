@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Item } from "./Item";
 import { ResponsiveMenu } from "./ResponsiveMenu";
+import MediaQuery from "react-responsive";
+import theme from "../../styles/theme";
 
 const MENU_DATA = [
+  {
+    label: "Home",
+    link: "/"
+  },
   {
     label: "Collections",
     feature: "COLLECTIONS",
@@ -40,49 +46,15 @@ export class Menu extends Component {
       activeItem: props.activeItem || "",
       openItem: "",
       menuData: MENU_DATA,
-      isMobile: false,
-      isTablet: false,
       toggleHamburger: true
     };
   }
 
-  _calcWindowDimensions = () => {
-    let isMobile = false;
-    let isTablet = false;
-
-    // Check if width is zero. If so we're on an iOS device and roll back to use window.innerWidth
-    let width = window.outerWidth === 0 ? window.innerWidth : window.outerWidth;
-
-    // Mobile
-    if (width < 767) {
-      isMobile = true;
-    }
-
-    // Tablet (adjusted for the menu in landscape mode on a tablet)
-    if (width >= 767 && width <= 1024) {
-      isTablet = true;
-    }
-
-    return { isMobile, isTablet };
-  };
-
-  handleResize = () => {
-    let { isMobile, isTablet } = this._calcWindowDimensions();
-    this.setState({ isMobile, isTablet });
-  };
-
   componentDidMount() {
-    this.handleResize();
-    window.addEventListener("resize", this.handleResize);
     document.addEventListener("mousedown", this.handleClickOutside, false);
-
-    let { isMobile, isTablet } = this._calcWindowDimensions();
-
-    this.setState({ isMobile, isTablet });
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.handleResize);
     document.removeEventListener("mousedown", this.handleClickOutside, false);
   }
 
@@ -107,30 +79,33 @@ export class Menu extends Component {
   handleClickOutside = e => !this.node.contains(e.target) && this.setState({ openItem: "" });
 
   render() {
-    const { activeItem, isMobile, isTablet, menuData, openItem } = this.state;
+    const { activeItem, menuData, openItem } = this.state;
 
     return (
       <div ref={node => (this.node = node)}>
-        {isMobile || isTablet ? (
+        <MediaQuery maxDeviceWidth={theme.media.mobileMax}>
           <ResponsiveMenu items={menuData} />
-        ) : (
-          <Nav>
-            {menuData &&
-              menuData.length > 0 &&
-              menuData.map(i => (
-                <Item
-                  active={i.label === activeItem}
-                  entries={i.dropdown}
-                  key={i.label}
-                  label={i.label}
-                  link={i.link}
-                  onBlur={() => this.toggleMenu()}
-                  onClick={() => this.toggleMenu(i.label)}
-                  open={i.label === openItem}
-                />
-              ))}
-          </Nav>
-        )}
+        </MediaQuery>
+        <MediaQuery minDeviceWidth={theme.media.mobileMax + 1}>
+          {
+            <Nav>
+              {menuData &&
+                menuData.length > 0 &&
+                menuData.map(item => (
+                  <Item
+                    active={item.label === activeItem}
+                    entries={item.dropdown}
+                    key={item.label}
+                    label={item.label}
+                    link={item.link}
+                    onBlur={() => this.toggleMenu()}
+                    onClick={() => this.toggleMenu(item.label)}
+                    open={item.label === openItem}
+                  />
+                ))}
+            </Nav>
+          }
+        </MediaQuery>
       </div>
     );
   }

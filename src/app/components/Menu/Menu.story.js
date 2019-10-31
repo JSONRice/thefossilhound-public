@@ -1,4 +1,4 @@
-import { storiesOf } from "@storybook/react";
+import { storiesOf, addParameters } from "@storybook/react";
 import { Menu } from "./Menu";
 import React from "react";
 import { oneItem, allItems } from "./test-data/menu-translated.js";
@@ -12,6 +12,8 @@ const StoryContainer = styled.div`
   padding: 15px;
 `;
 
+addParameters({ viewpoort: { defaultViewport: "iphone6" } });
+
 storiesOf("Menu", module)
   .add("default", () => <Menu />)
 
@@ -23,14 +25,13 @@ storiesOf("Menu", module)
       <h1>Other content Other content Other content</h1>
     </div>
   ))
-  .addParameters({ viewport: { defaultViewport: "iphone6" } })
   .add(
-    "ResponsiveMenu on iPhone 6 Plus",
+    "ResponsiveMenu on an iPhone",
     () => (
       <StoryContainer>
         This is a responsive (mobile and tablet) based menu
         <ResponsiveMenu items={test} />
       </StoryContainer>
     ),
-    { viewport: "iphone6p" }
+    { viewport: { defaultViewport: "iphonex" } }
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { LocalLink } from "../../LocalLink";
+import PropTypes from "prop-types";
 
 const StyledItem = styled.li`
   background: ${props => ({ theme }) => (props.isMenuList ? theme.color.white100 : "initial")};
@@ -94,18 +95,7 @@ function resolveDropdownLink(href, children) {
 
 const ConditionalLink = ({ href, children }) => (href ? resolveLink(href, children) : children);
 
-export const Item = ({
-  isMenuList,
-  label,
-  link,
-  active = false,
-  open = false,
-  onClick,
-  onBlur,
-  entries = [],
-  isTablet = false,
-  isMobile = false
-}) => {
+export const Item = ({ isMenuList, label, link, active, open, onClick, onBlur, entries, isTablet, isMobile }) => {
   return (
     <StyledItem
       active={active}
@@ -118,10 +108,10 @@ export const Item = ({
           {label === "Home" ? (
             <HomeIcon alt="Home Icon" src="/icon-home.png" />
           ) : (
-            <>
+            <React.Fragment>
               {label}
               {entries && entries.length > 0 && !isTablet && !isMobile && <Arrow />}
-            </>
+            </React.Fragment>
           )}
         </Label>
       </ConditionalLink>
@@ -136,6 +126,26 @@ export const Item = ({
       )}
     </StyledItem>
   );
+};
+
+Item.propTypes = {
+  isMenuList: PropTypes.bool,
+  label: PropTypes.string,
+  link: PropTypes.string,
+  active: PropTypes.bool,
+  open: PropTypes.bool,
+  onClick: PropTypes.func,
+  onBlur: PropTypes.func,
+  entries: PropTypes.array,
+  isTablet: PropTypes.bool,
+  isMobile: PropTypes.bool
+};
+
+Item.defaultProps = {
+  active: false,
+  open: false,
+  isTablet: false,
+  isMobile: false
 };
 
 export default Item;

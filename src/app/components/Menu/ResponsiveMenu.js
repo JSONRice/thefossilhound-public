@@ -58,61 +58,64 @@ export class ResponsiveMenu extends React.Component {
     } = this;
 
     return (
-      <StyledResponsiveMenu>
-        <Icon name="menuHamburger" fontSize={18} color="#3c4d71" onClick={() => this.setState({ closed: !closed })} />
-        {!closed && (
-          <Container>
-            {items.map(i => {
-              return i.label === "Home" ? (
-                <Accordion
-                  iconName="home"
-                  iconColor="#777"
-                  iconSize={14}
-                  hasIcon={true}
-                  key={`accordion-key-label-${i.label}`}
-                >
-                  {i.dropdown.map(item => (
-                    <AccordionItem
-                      key={`link-key-label-${item.label}`}
-                      onClick={() => this.setState({ closed: !closed })}
-                    >
-                      <ConditionalLink href={item.link && item.link}>{item.label}</ConditionalLink>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              ) : i.dropdown ? (
-                <Accordion label={i.label} key={`accordion-key-label-${i.label}`}>
-                  {i.dropdown.map(item => (
-                    <AccordionItem
-                      key={`link-key-label-${item.label}`}
-                      onClick={() => this.setState({ closed: !closed })}
-                    >
-                      <ConditionalLink href={item.link && item.link}>
-                        <LinkContainer>{item.label}</LinkContainer>
-                      </ConditionalLink>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              ) : (
-                <LabelOnlyContainer
-                  key={`link-key-label-${i.label}`}
-                  onClick={() => this.setState({ closed: !closed })}
-                >
-                  <ConditionalLink href={i.link && i.link}>
-                    <LinkContainer>{i.label}</LinkContainer>
-                  </ConditionalLink>
-                </LabelOnlyContainer>
-              );
-            })}
-          </Container>
-        )}
-      </StyledResponsiveMenu>
+      items && (
+        <StyledResponsiveMenu>
+          <Icon name="menuHamburger" fontSize={18} color="#3c4d71" onClick={() => this.setState({ closed: !closed })} />
+          {!closed && (
+            <Container>
+              {items.map(item => {
+                return item.label === "Home" ? (
+                  <Accordion
+                    iconName="home"
+                    iconColor="#777"
+                    iconSize={14}
+                    hasIcon={true}
+                    key={`accordion-key-label-${item.label}`}
+                  >
+                    {item.dropdown &&
+                      item.dropdown.map(item => (
+                        <AccordionItem
+                          key={`link-key-label-${item.label}`}
+                          onClick={() => this.setState({ closed: !closed })}
+                        >
+                          <ConditionalLink href={item.link && item.link}>{item.label}</ConditionalLink>
+                        </AccordionItem>
+                      ))}
+                  </Accordion>
+                ) : item.dropdown ? (
+                  <Accordion label={item.label} key={`accordion-key-label-${item.label}`}>
+                    {item.dropdown.map(item => (
+                      <AccordionItem
+                        key={`link-key-label-${item.label}`}
+                        onClick={() => this.setState({ closed: !closed })}
+                      >
+                        <ConditionalLink href={item.link && item.link}>
+                          <LinkContainer>{item.label}</LinkContainer>
+                        </ConditionalLink>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                ) : (
+                  <LabelOnlyContainer
+                    key={`link-key-label-${item.label}`}
+                    onClick={() => this.setState({ closed: !closed })}
+                  >
+                    <ConditionalLink href={item.link && item.link}>
+                      <LinkContainer>{item.label}</LinkContainer>
+                    </ConditionalLink>
+                  </LabelOnlyContainer>
+                );
+              })}
+            </Container>
+          )}
+        </StyledResponsiveMenu>
+      )
     );
   }
 }
 
 ResponsiveMenu.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 ResponsiveMenu.defaultProps = {

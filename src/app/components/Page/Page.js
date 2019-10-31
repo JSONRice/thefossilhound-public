@@ -3,6 +3,9 @@ import { withRouter } from "next/router";
 import styled from "styled-components";
 import Head from "next/head";
 import BreadcrumbService from "../../services/breadcrumb-service";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
+import ConnectedMenu from "../Menu/ConnectedMenu";
+import ConnectedUnitSelector from "../UnitSelector/ConnectedUnitSelector";
 
 const PrintButtonWrapper = styled.div`
   padding-bottom: 5px;
@@ -18,7 +21,7 @@ const Content = styled.div`
   line-height: 20px;
   grid-column-start: 2;
   grid-column-end: 3;
-  margin-top: 20px;  
+  margin-top: 20px;
 
   @media (max-width: 768px) {
     grid-column-start: 1;
@@ -44,10 +47,9 @@ const PageContainerGrid = styled.div`
     grid-template-columns: 1fr;
     padding: 25px;
   }
-  
-  background-color: ${({ theme }) => theme.color.black700};
-  color: white;    
-  
+
+  background-color: #333;
+  color: white;
 `;
 
 const StyledHeader = styled.h1`
@@ -71,29 +73,6 @@ class Page extends Component {
       let breadCrumbService = new BreadcrumbService();
       breadCrumbService.push(title, router.asPath);
     }
-    this.state = {
-      isMobile: false
-    };
-  }
-
-  handleResize = () => {
-    let isMobile = false;
-    if (window.outerWidth < 768) {
-      isMobile = true;
-    }
-
-    if (isMobile !== this.state.isMobile) {
-      this.setState({ isMobile });
-    }
-  };
-
-  componentDidMount() {
-    this.handleResize();
-    window.addEventListener("resize", this.handleResize);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.handleResize);
   }
 
   render() {
@@ -116,8 +95,11 @@ class Page extends Component {
         <Head>
           <title>{title}</title>
         </Head>
+        {includeMenu && <ConnectedMenu />}
         <PageContainerGrid>
           <Header>
+            {includeHeader && <Breadcrumb items={breadcrumbItems} />}
+            {includeHeader && <ConnectedUnitSelector />}
             {includeHeader && (
               <StyledHeader>
                 <div>{title}</div>
