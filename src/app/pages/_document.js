@@ -19,6 +19,16 @@ class CustomDocument extends Document {
   render() {
     const { lang = "eng" } = this.props;
 
+    const mountPointIds = ["modals", "toasts"];
+
+    mountPointIds.forEach(function(mountPointId) {
+      if (document.getElementById(mountPointId) == null) {
+        const $mountPoint = document.createElement("div");
+        $mountPoint.setAttribute("id", mountPointId);
+        document.body.append($mountPoint);
+      }
+    });
+
     return (
       <html lang="en" style={{ height: "100%", backgroundColor: "#9d9d9d" }}>
         <Head>

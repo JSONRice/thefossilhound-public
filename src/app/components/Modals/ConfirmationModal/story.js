@@ -48,17 +48,20 @@ class ConfirmationModalStorybook extends React.Component {
         {
           showModal && (
             <ConfirmationModal
-              heading="Confirmation Modal"
-              disabledConfirmButton={false}
-              disabledCancelButton={false}
-              confirmButtonText="Confirm"
-              cancelButtonText="Cancel"
-              onConfirm={() => console.log("onConfirm")}
-              onCancel={() => console.log("onCancel")}
+              heading={text("heading", "Confirmation Modal")}
+              disabledConfirmButton={boolean("disabledConfirmButton", undefined)}
+              disabledCancelButton={boolean("disabledCancelButton", undefined)}
+              confirmButtonText={text("confirmButtonText", "Confirm")}
+              cancelButtonText={text("cancelButtonText", "Cancel")}
+              onConfirm={() => this.setState({ showModal: false }, action("onConfirm"))}
+              onCancel={() => this.setState({ showModal: false }, action("onCancel"))}
               confirmButtonQAHook="changedByApprovalConfirmSubmitForApprovalAction"
               cancelButtonQAHook="changedByApprovalCancelSubmitForApprovalAction"
             >
-              <h3>TODO: finish adding storybook knobs</h3>
+              <b>Manifesto for Agile Software Development</b>
+              <br />
+              <br />
+              {text("children", CHILDREN)}
             </ConfirmationModal>
           )
         }

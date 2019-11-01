@@ -1,6 +1,14 @@
 import React from "react";
-import { ButtonGroup } from "../../Buttons";
+// import { ButtonGroup } from "../../Buttons";
 import styled from "styled-components";
+
+const ButtonGroup = styled.div`
+  display: flex;
+  
+  & > *:not(:last-child) {
+    margin-right: 5px;
+  }
+`;
 
 const StyledButtonGroup = styled(ButtonGroup)`
   justify-content: flex-end;
