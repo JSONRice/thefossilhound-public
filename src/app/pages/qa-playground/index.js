@@ -3,7 +3,7 @@ import { Page } from "../../components/Page";
 import { LocalLink } from "../../components/LocalLink";
 import { formatCurrency, formatCurrencyWithSymbol } from "../../utils/formatters";
 import { getLocale } from "../../utils/initialization";
-import Banner from "../../components/Banner/Banner";
+import { Banner } from "../../components/Banner";
 import { PrimaryButton, SecondaryButton } from "../../components/Buttons";
 import styled from "styled-components";
 

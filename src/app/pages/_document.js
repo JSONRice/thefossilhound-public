@@ -22,25 +22,8 @@ class CustomDocument extends Document {
     return (
       <html lang="en" style={{ height: "100%", backgroundColor: "#9d9d9d" }}>
         <Head>
-          <link rel="icon" href="https://edge.ldscdn.org/cdn2/common/images/logos/favicon-lds-1.ico" />
+          <link rel="icon" href="/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `window.platformConfig = {
-              dataConfig: {
-                lang: "${lang}"
-              },
-              searchConfig: {
-                searchEndpoint: "/mySearch",
-                searchQueryParam: "q"
-              },
-              footerConfig: {
-                removeLegacyScripts: true,
-                noMargin: false
-              }
-            }`
-            }}
-          />
           {this.props.styleTags}
         </Head>
         <body>
