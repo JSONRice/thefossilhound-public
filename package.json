@@ -21,6 +21,12 @@
     "watch:test": "npm test -- --watch",
     "format": "prettier --write '**/*.{js,json,md}'"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
+  },
   "keywords": [],
   "license": "MIT",
   "dependencies": {

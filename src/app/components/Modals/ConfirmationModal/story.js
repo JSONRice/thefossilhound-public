@@ -44,6 +44,7 @@ class ConfirmationModalStorybook extends React.Component {
           <PrimaryButton onClick={() => this.setState({ showModal: true })}>Click to reveal modal</PrimaryButton>
         </PrimaryButtonWrapper>
         {/*TODO: finish adding storybook knobs*/}
+        {/*This is a test*/}
         {showModal && <h3>TODO: finish adding storybook knobs</h3>}
       </>
     );
