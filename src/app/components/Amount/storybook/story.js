@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
-import Amount from "../Amount";
+import { Amount } from "../Amount";
 import styled from "styled-components";
 
 let balance = 10000;

@@ -39,11 +39,11 @@ export const ConfirmationModal = ({
   children
 }) => {
   return (
-    <StyledModal heading={heading || "Are you sure?"} onClose={onCancel}>
+    <StyledModal heading={heading} onClose={onCancel}>
       <Children>{children}</Children>
       <StyledModalBottomButtonGroup>
         <SecondaryButton disabled={disabledCancelButton} onClick={onCancel} autoFocus data-qa={cancelButtonQAHook}>
-          {cancelButtonText || "Cancel"}
+          {cancelButtonText}
         </SecondaryButton>
         <PrimaryButton
           disabled={disabledConfirmButton}
@@ -52,7 +52,7 @@ export const ConfirmationModal = ({
           onClick={onConfirm}
           data-qa={confirmButtonQAHook}
         >
-          {confirmButtonText || "Save"}
+          {confirmButtonText}
         </PrimaryButton>
       </StyledModalBottomButtonGroup>
     </StyledModal>
@@ -73,4 +73,10 @@ ConfirmationModal.propTypes = {
 
   confirmButtonQAHook: PropTypes.string,
   cancelButtonQAHook: PropTypes.string
+};
+
+ConfirmationModal.defaultProps = {
+  cancelButtonText: "Cancel",
+  confirmButtonText: "Save",
+  heading: "Are you sure?"
 };

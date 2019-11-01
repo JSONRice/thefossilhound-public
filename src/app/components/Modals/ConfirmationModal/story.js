@@ -6,6 +6,8 @@ import JSXAddon from "storybook-addon-jsx";
 import { ConfirmationModal } from "./ConfirmationModal";
 import styled from "styled-components";
 import { PrimaryButton } from "../../Buttons";
+import PropTypes from "prop-types";
+import { Modal } from "../Modal";
 
 setAddon(JSXAddon);
 
@@ -43,9 +45,23 @@ class ConfirmationModalStorybook extends React.Component {
         <PrimaryButtonWrapper>
           <PrimaryButton onClick={() => this.setState({ showModal: true })}>Click to reveal modal</PrimaryButton>
         </PrimaryButtonWrapper>
-        {/*TODO: finish adding storybook knobs*/}
-        {/*This is a test*/}
-        {showModal && <h3>TODO: finish adding storybook knobs</h3>}
+        {
+          showModal && (
+            <ConfirmationModal
+              heading="Confirmation Modal"
+              disabledConfirmButton={false}
+              disabledCancelButton={false}
+              confirmButtonText="Confirm"
+              cancelButtonText="Cancel"
+              onConfirm={() => console.log("onConfirm")}
+              onCancel={() => console.log("onCancel")}
+              confirmButtonQAHook="changedByApprovalConfirmSubmitForApprovalAction"
+              cancelButtonQAHook="changedByApprovalCancelSubmitForApprovalAction"
+            >
+              <h3>TODO: finish adding storybook knobs</h3>
+            </ConfirmationModal>
+          )
+        }
       </>
     );
   }
