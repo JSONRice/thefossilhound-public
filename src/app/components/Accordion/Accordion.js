@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Icon } from "../Icon";
 import styled from "styled-components";
@@ -21,75 +21,90 @@ const LabelWrapper = styled.div`
   padding: 10px;
 `;
 
-export const Accordion = ({
-  children,
-  color,
-  closed,
-  hasIcon,
-  header,
-  headerBackgroundColor,
-  iconColor,
-  iconFlexDirection,
-  iconExpand,
-  iconFontFamily,
-  iconRotateDeg,
-  iconName,
-  iconSize,
-  justifyContent,
-  label,
-  onClick
-}) => {
-  const [localClosed, setLocalClosed] = useState(closed);
+/**
+ * Accordion is nearly a Higher Order Component (HOC) in the fact that it encapsulates an Icon and when that
+ * Icon is clicked an onClick callback provided should toggle the closed state.
+ */
+export class Accordion extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      closed: props.closed
+    };
+  }
 
-  return (
-    <AccordionContainer color={color} justifyContent={justifyContent}>
-      <div onClick={() => setLocalClosed(!localClosed)}>
-        {hasIcon ? (
-          <>
-            <LabelWrapper>
-              <Icon
-                fontSize={iconSize}
-                name={iconName}
-                color={iconColor}
-                flexDirection={iconFlexDirection}
-                expand={iconExpand}
-              />
-            </LabelWrapper>
-            {!localClosed && <ChildrenContainer>{children}</ChildrenContainer>}
-          </>
-        ) : (
-          <>
-            <LabelWrapper>
-              <div>{label}</div>
-            </LabelWrapper>
-            {!localClosed && <ChildrenContainer>{children}</ChildrenContainer>}
-          </>
-        )}
-      </div>
-    </AccordionContainer>
-  );
-};
+  componentDidMount() {
+    // no-op
+  }
+
+  render() {
+    let {
+      props: {
+        children,
+        hasIcon,
+        iconColor,
+        iconFlexDirection,
+        iconExpand,
+        iconName,
+        iconSize,
+        label,
+        color,
+        justifyContent
+      },
+      state: { closed }
+    } = this;
+
+    return (
+      <AccordionContainer
+        color={color}
+        justifyContent={justifyContent}
+        onClick={() => this.setState({ closed: !closed })}
+      >
+        <div>
+          {
+            hasIcon ? (
+              <>
+                <LabelWrapper key="label-wrapper-with-icon">
+                  <Icon
+                    fontSize={iconSize}
+                    name={iconName}
+                    color={iconColor}
+                    flexDirection={iconFlexDirection}
+                    expand={iconExpand}
+                  />
+                </LabelWrapper>
+                {!closed && <ChildrenContainer>{children}</ChildrenContainer>}
+              </>
+            ) : (
+              <>
+                <LabelWrapper key="label-wrapper-without-icon">
+                  <div>{label}</div>
+                </LabelWrapper>
+                {!closed && <ChildrenContainer>{children}</ChildrenContainer>}
+              </>
+            )
+          }
+        </div>
+      </AccordionContainer>
+    );
+  }
+}
 
 Accordion.propTypes = {
   color: PropTypes.string,
   closed: PropTypes.bool,
-  hasIcon: PropTypes.bool,
-  header: PropTypes.node,
-  headerBackgroundColor: PropTypes.string,
-  iconName: PropTypes.string,
-  iconExpand: PropTypes.bool,
-  iconFontFamily: PropTypes.string,
-  iconRotateDeg: PropTypes.number,
-  iconSize: PropTypes.number,
   justifyContent: PropTypes.string,
-  label: PropTypes.string,
-  onClick: PropTypes.func
+  hasIcon: PropTypes.bool,
+  iconName: PropTypes.string,
+  iconColor: PropTypes.string,
+  iconExpand: PropTypes.bool,
+  iconSize: PropTypes.number,
+  label: PropTypes.string
 };
 
 Accordion.defaultProps = {
   closed: true,
   hasIcon: false,
   iconExpand: false,
-  iconFontFamily: "fontFamilyGlyphiconsHalflings",
   justifyContent: "flex-start"
 };

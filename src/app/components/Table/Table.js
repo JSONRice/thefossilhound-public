@@ -309,15 +309,17 @@ export class Table extends Component {
     // Return the children with the exposed Table API functions:
     return (
       <>
-        {children({
-          expand: this.expand,
-          expandedRows: this.state.expandedRows,
-          rows,
-          sort: this.sort,
-          filter: this.filter,
-          clear: this.clear,
-          filterPairs: this.state.filterPairs
-        })}
+        {
+          children({
+            expand: this.expand,
+            expandedRows: this.state.expandedRows,
+            rows,
+            sort: this.sort,
+            filter: this.filter,
+            clear: this.clear,
+            filterPairs: this.state.filterPairs
+          })
+        }
         {columnConfiguration && (
           <>
             {/*Mobile*/}

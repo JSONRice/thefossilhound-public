@@ -16,10 +16,8 @@ class CustomDocument extends Document {
     return { styleTags, lang, platform, ...page };
   }
 
-  render() {
-    const { lang = "eng" } = this.props;
-
-    const mountPointIds = ["modals", "toasts"];
+  componentDidMount() {
+    const mountPointIds = ["modals", "popovers", "tooltips"];
 
     mountPointIds.forEach(function(mountPointId) {
       if (document.getElementById(mountPointId) == null) {
@@ -28,18 +26,23 @@ class CustomDocument extends Document {
         document.body.append($mountPoint);
       }
     });
+  }
+
+  render() {
+    const { lang = "eng" } = this.props;
 
     return (
       <html lang="en" style={{ height: "100%", backgroundColor: "#9d9d9d" }}>
-        <Head>
-          <link rel="icon" href="/favicon.ico" />
-          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
-          {this.props.styleTags}
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
+      <Head>
+        <link rel="icon" href="/favicon.ico"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes"/>
+        {this.props.styleTags}
+      </Head>
+      <body>
+      <div id="modals"/>
+      <Main/>
+      <NextScript/>
+      </body>
       </html>
     );
   }

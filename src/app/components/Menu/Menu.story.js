@@ -1,7 +1,7 @@
 import { storiesOf, addParameters } from "@storybook/react";
 import { Menu } from "./Menu";
 import React from "react";
-import { oneItem, allItems } from "./test-data/menu-translated.js";
+import { oneItem, allItems, allItemsOneModified } from "./test-data/menu-translated.js";
 import { action } from "@storybook/addon-actions";
 import { ResponsiveMenu } from "./ResponsiveMenu";
 import test from "./test-data/menu-translated-all";
@@ -12,7 +12,27 @@ const StoryContainer = styled.div`
   padding: 15px;
 `;
 
-addParameters({ viewpoort: { defaultViewport: "iphone6" } });
+class Storybook extends React.Component {
+  state = {
+    items: allItems
+  };
+
+  render() {
+
+    let { items } = this.state.items;
+
+    return (
+      <div>
+        <Menu menuData={items} onClick={(event) => {
+          this.setState({ items: allItemsOneModified })
+        }} activeItem="Donations" />
+        <h1>Other content Other content Other content</h1>
+      </div>
+    )
+  }
+}
+
+addParameters({ viewport: { defaultViewport: "iphone6" } });
 
 storiesOf("Menu", module)
   .add("default", () => <Menu />)
@@ -20,10 +40,7 @@ storiesOf("Menu", module)
   .add("simple", () => <Menu menuData={oneItem} onClick={action} />)
 
   .add("full", () => (
-    <div>
-      <Menu menuData={allItems} onClick={action} activeItem="Donations" />
-      <h1>Other content Other content Other content</h1>
-    </div>
+    <Storybook />
   ))
   .add(
     "ResponsiveMenu on an iPhone",

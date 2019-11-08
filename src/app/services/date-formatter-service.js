@@ -20,18 +20,18 @@ export function getGraphQLDate(date) {
     .map(({ type, value }) => {
       return { [type]: value };
     })
-    .forEach(p => {
+    .forEach(part => {
       // There's just one key to check
-      let k = Object.keys(p)[0];
-      switch (k) {
+      let key = Object.keys(part)[0];
+      switch (key) {
         case "day":
-          day = p[k];
+          day = part[key];
           break;
         case "month":
-          month = p[k];
+          month = part[key];
           break;
         case "year":
-          year = p[k];
+          year = part[key];
           break;
       }
     });

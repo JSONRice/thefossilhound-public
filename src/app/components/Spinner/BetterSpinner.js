@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { pickGlobalHtmlAttributePropsService } from "../../services/pick-global-html-attribute-props-service";
 
 import styled from "styled-components";
 
@@ -29,7 +28,7 @@ const StyledSVG = styled.svg`
  */
 export const BetterSpinner = ({ size, spinnerClassName, ...props }) => {
   return (
-    <StyledWrapper {...pickGlobalHtmlAttributePropsService(props)} size={size} aria-hidden="true">
+    <StyledWrapper size={size} aria-hidden="true">
       <StyledSVG viewBox="0 0 24 24" className={spinnerClassName}>
         <path
           opacity="0.2"

@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { pickGlobalHtmlAttributePropsService } from "../../services/pick-global-html-attribute-props-service";
 import theme from "../../styles/theme";
 
 import styled from "styled-components";
@@ -62,7 +61,7 @@ export class Spinner extends React.PureComponent {
 
     return (
       !hidden && (
-        <StyledWrapper {...pickGlobalHtmlAttributePropsService(props)} size={size} aria-hidden="true">
+        <StyledWrapper size={size} aria-hidden="true">
           <StyledSVG
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 100 100"
