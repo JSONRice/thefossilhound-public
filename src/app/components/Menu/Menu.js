@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Item } from "./Item";
 import { ResponsiveMenu } from "./ResponsiveMenu";
-import MediaQuery from "react-responsive";
+import MediaQuery from "../MediaQuery/MediaQuery";
 import theme from "../../styles/theme";
 
 const MENU_DATA = [
@@ -15,12 +15,20 @@ const MENU_DATA = [
     feature: "COLLECTIONS",
     dropdown: [
       {
+        label: "Index Lookup",
+        link: "/collections"
+      },
+      {
         label: "Sharks and Rays",
         link: "/collections/chondrichthyes"
       },
       {
         label: "Trilobites",
         link: "/collections/trilobita"
+      },
+      {
+        label: "Crabs",
+        link: "/collections/malacostraca"
       }
     ]
   },
@@ -45,7 +53,7 @@ export class Menu extends Component {
     this.state = {
       activeItem: props.activeItem || "",
       openItem: "",
-      menuData: MENU_DATA,
+      items: MENU_DATA,
       toggleHamburger: true
     };
   }
@@ -59,11 +67,11 @@ export class Menu extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.menuData && prevState.menuData) {
-      if (nextProps.menuData.length !== prevState.menuData.length) {
+    if (nextProps.items && prevState.items) {
+      if (nextProps.items.length !== prevState.items.length) {
         return {
           ...prevState,
-          menuData: nextProps.menuData
+          items: nextProps.items
         };
       }
     }
@@ -79,33 +87,37 @@ export class Menu extends Component {
   handleClickOutside = e => !this.node.contains(e.target) && this.setState({ openItem: "" });
 
   render() {
-    const { activeItem, menuData, openItem } = this.state;
+    const { activeItem, items, openItem } = this.state;
 
     return (
       <div ref={node => (this.node = node)}>
-        <MediaQuery maxDeviceWidth={theme.media.mobileMax}>
-          <ResponsiveMenu items={menuData} />
-        </MediaQuery>
-        <MediaQuery minDeviceWidth={theme.media.mobileMax + 1}>
-          {
-            <Nav>
-              {menuData &&
-                menuData.length > 0 &&
-                menuData.map(item => (
-                  <Item
-                    active={item.label === activeItem}
-                    entries={item.dropdown}
-                    key={item.label}
-                    label={item.label}
-                    link={item.link}
-                    onBlur={() => this.toggleMenu()}
-                    onClick={() => this.toggleMenu(item.label)}
-                    open={item.label === openItem}
-                  />
-                ))}
-            </Nav>
-          }
-        </MediaQuery>
+        <MediaQuery
+          media={tabletBreakPoint}
+          render={({ matches }) => (
+            <>
+              {matches ? (
+                <Nav>
+                  {items &&
+                  items.length > 0 &&
+                  items.map(item => (
+                    <Item
+                      active={item.label === activeItem}
+                      entries={item.dropdown}
+                      key={item.label}
+                      label={item.label}
+                      link={item.link}
+                      onBlur={() => this.toggleMenu()}
+                      onClick={() => this.toggleMenu(item.label)}
+                      open={item.label === openItem}
+                    />
+                  ))}
+                </Nav>
+              ) : (
+                <ResponsiveMenu items={items} />
+              )}
+            </>
+          )}
+        />
       </div>
     );
   }

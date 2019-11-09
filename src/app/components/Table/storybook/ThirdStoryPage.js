@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Table } from "../Table";
 import data from "./story_test_data.js";
 import { HeaderCell } from "../HeaderCell";
-import DateFormatterService from "../../../services/date-formatter-service";
 import { formatDate } from "../../../utils/formatters";
 
 let Cell = styled.div`
@@ -74,13 +73,6 @@ class ThirdStoryPage extends Component {
 
   render() {
     let { data } = this.state;
-
-    const options = {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    };
 
     return (
       <Container>

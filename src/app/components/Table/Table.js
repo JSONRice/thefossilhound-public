@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-// import MediaQuery from "@churchofjesuschrist/eden-media-query";
 import { Rows, Headers } from "./";
-import theme from "../../styles/theme";
 import { column } from "../../utils/prop-types";
-import MediaQuery from "react-responsive";
-import { ResponsiveMenu } from "../Menu";
+import MediaQuery from "../MediaQuery/MediaQuery";
+import { tabletBreakPoint, desktopBreakPoint } from "../../utils/constants";
 
 /**
  * The Table component provides table based API functionality for sorting,
@@ -215,8 +213,6 @@ export class Table extends Component {
       loading
     } = this.props;
     let { expandAll, filterPairs, sortKey } = this.state;
-    const tabletBreakPoint = `(min-width: ${theme.media.mobileMax + 1}px)`;
-    const desktopBreakPoint = `(min-width: ${theme.media.tabletMax + 1}px)`;
     let rows = Object.keys(filterPairs).reduce((acc, key) => {
       let filterValue = filterPairs[key].filterValue;
       let filterType = filterPairs[key].filterType;
@@ -309,28 +305,31 @@ export class Table extends Component {
     // Return the children with the exposed Table API functions:
     return (
       <>
-        {
-          children({
-            expand: this.expand,
-            expandedRows: this.state.expandedRows,
-            rows,
-            sort: this.sort,
-            filter: this.filter,
-            clear: this.clear,
-            filterPairs: this.state.filterPairs
-          })
-        }
+        {children({
+          expand: this.expand,
+          expandedRows: this.state.expandedRows,
+          rows,
+          sort: this.sort,
+          filter: this.filter,
+          clear: this.clear,
+          filterPairs: this.state.filterPairs
+        })}
         {columnConfiguration && (
-          <>
-            {/*Mobile*/}
-            <MediaQuery maxDeviceWidth={theme.media.mobileMax}>{renderTable("mobile")}</MediaQuery>
-            {/*Tablet*/}
-            <MediaQuery minDeviceWidth={theme.media.mobileMax + 1} maxDeviceWidth={theme.media.tabletMax}>
-              {renderTable("tablet")}
-            </MediaQuery>
-            {/*Desktop*/}
-            <MediaQuery minDeviceWidth={theme.media.tabletMax + 1}>{renderTable("desktop")}</MediaQuery>
-          </>
+          <MediaQuery
+            media={tabletBreakPoint}
+            render={({ matches }) => (
+              <>
+                {matches ? (
+                  <MediaQuery
+                    media={desktopBreakPoint}
+                    render={({ matches }) => <>{matches ? renderTable("desktop") : renderTable("tablet")}</>}
+                  />
+                ) : (
+                  renderTable("mobile")
+                )}
+              </>
+            )}
+          />
         )}
       </>
     );
@@ -338,7 +337,8 @@ export class Table extends Component {
 }
 
 Table.defaultProps = {
-  filterPairs: { "*": { filterValue: "", filterType: "string" } }
+  filterPairs: { "*": { filterValue: "", filterType: "string" } },
+  viewType: "desktop"
 };
 
 Table.propTypes = {
@@ -347,5 +347,6 @@ Table.propTypes = {
   tabletOverrideColumnConfiguration: PropTypes.arrayOf(PropTypes.shape(column)),
   mobileOverrideColumnConfiguration: PropTypes.arrayOf(PropTypes.shape(column)),
   loading: PropTypes.bool,
-  currencyCode: PropTypes.string
+  currencyCode: PropTypes.string,
+  viewType: PropTypes.oneOf(["desktop", "tablet", "mobile"])
 };

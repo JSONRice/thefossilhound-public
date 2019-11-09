@@ -28,7 +28,7 @@ describe("Accordion", () => {
 
   let ThemedAccordionComponent = mount(AccordionJSX);
 
-  it("Shoudl have a styled-components theme", () => {
+  it("Should have a styled-components theme", () => {
     expect(ThemedAccordionComponent.props().theme).not.toBeNull();
   });
 

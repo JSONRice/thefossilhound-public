@@ -23,7 +23,7 @@ class Storybook extends React.Component {
 
     return (
       <div>
-        <Menu menuData={items} onClick={(event) => {
+        <Menu items={items} onClick={(event) => {
           this.setState({ items: allItemsOneModified })
         }} activeItem="Donations" />
         <h1>Other content Other content Other content</h1>
@@ -32,12 +32,11 @@ class Storybook extends React.Component {
   }
 }
 
-addParameters({ viewport: { defaultViewport: "iphone6" } });
 
 storiesOf("Menu", module)
   .add("default", () => <Menu />)
 
-  .add("simple", () => <Menu menuData={oneItem} onClick={action} />)
+  .add("simple", () => <Menu items={test} onClick={action} />)
 
   .add("full", () => (
     <Storybook />

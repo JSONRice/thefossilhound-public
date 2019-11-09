@@ -19,6 +19,7 @@ pids
 .vscode/
 .cache/
 package-lock.json
+coverage/
 
 # JetBrains IDEs
 .idea/

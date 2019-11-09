@@ -1,19 +1,4 @@
-export const financialTransactionTypes = {
-  DISBURSEMENT: 202,
-  DISBURSEMENT_ADJUSTMENT: 2232,
-  DONATION: 201,
-  DONATION_ADJUSTMENT: 204,
-  DONATION_IN_KIND: 2160,
-  RECON_TRANSACTION: 2262,
-  TRANSFERS: 2157,
-  TELLER_ENTRY: 2260
-};
-
-export const transactionTypeTranslationLabel = {
-  INCOME: "label.income",
-  EXPENSE: "label.expense",
-  TRANSFER: "label.transfer"
-};
+import theme from "../styles/theme";
 
 export const responseStatus = {
   OK: 200,
@@ -27,3 +12,6 @@ export const responseStatus = {
   SERVICE_UNAVAILABLE: 503,
   GATEWAY_TIMEOUT: 504
 };
+
+export const tabletBreakPoint = `(min-width: ${theme.media.mobileMax + 1}px)`;
+export const desktopBreakPoint = `(min-width: ${theme.media.tabletMax + 1}px)`;

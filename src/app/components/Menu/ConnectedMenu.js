@@ -5,7 +5,7 @@ import { Menu } from "./Menu";
 class ConnectedMenu extends Component {
   render() {
     const { items } = this.props;
-    return <Menu menuData={items} />;
+    return <Menu items={items} />;
   }
 }
 
