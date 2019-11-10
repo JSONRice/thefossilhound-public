@@ -2,6 +2,12 @@ import * as colors from "./theme-colors";
 import * as fontSizes from "./theme-font-sizes";
 import * as icons from "./theme-icons";
 
+const _determineLineHeight = (size, excludeLineHeight = false) => {
+  if (!excludeLineHeight) {
+    return `line-height: ${fontSizes[`fontSize${size}LineHeight`]}`;
+  }
+};
+
 const theme = {
   // MediaQueries
   media: {
@@ -88,11 +94,11 @@ const theme = {
   /**
    * @param {!Number} [size=500] - See theme-font-sizes.js
    */
-  fontSize(size = 13) {
+  fontSize(size = 13, excludeLineHeight = false) {
     // language=SCSS prefix={ suffix=}
     return `
         font-size:   ${fontSizes[`fontSize${size}`]};
-        line-height: ${fontSizes[`fontSize${size}LineHeight`]};
+        _determineLineHeight(size, excludeLineHeight);
       `;
   },
   bannerColors(type = "info") {
@@ -202,7 +208,8 @@ Object.assign(theme, {
     borderDarkColor: colors.gray500,
     borderRadius: theme.defaults.borderRadius,
 
-    rowOdd: colors.white800,
+    rowOdd: colors.blue1800,
+    rowEven: colors.white900,
     responsiveRowEven: colors.blue1900
   },
 

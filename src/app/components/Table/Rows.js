@@ -12,7 +12,7 @@ const RowsContainer = styled.section`
     background-color: ${({ theme }) => theme.containers.rowOdd};
   }
   > :nth-child(even) {
-    background-color: transparent;
+    background-color: ${({ theme }) => theme.containers.rowEven};
   }
 `;
 

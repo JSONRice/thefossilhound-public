@@ -8,7 +8,7 @@ const StyledImage = styled(Image)`
   height: 400px;
 `;
 
-export const Trilobita = () => {
+const Trilobita = () => {
   return (
     <Page title="Trilobita">
       <p>
@@ -20,7 +20,9 @@ export const Trilobita = () => {
         at the end of the Permian about 252 million years ago. The trilobites were among the most successful of all
         early animals, existing in oceans for almost 300 million years.
       </p>
-      <StyledImage responsive={true} src="/modocia_one.jpg" />
+      <StyledImage responsive="true" src="/Greenops_widderensis.jpg" />
     </Page>
   );
 };
+
+export default Trilobita;

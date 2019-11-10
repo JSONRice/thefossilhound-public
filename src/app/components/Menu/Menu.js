@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Item } from "./Item";
 import { ResponsiveMenu } from "./ResponsiveMenu";
 import MediaQuery from "../MediaQuery/MediaQuery";
-import theme from "../../styles/theme";
+import { tabletBreakPoint } from "../../utils/constants";
 
 const MENU_DATA = [
   {

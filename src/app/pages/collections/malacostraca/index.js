@@ -8,7 +8,7 @@ const StyledImage = styled(Image)`
   height: 400px;
 `;
 
-export const Malacostraca = () => {
+const Malacostraca = () => {
   return (
     <Page title="Malacostraca: Crabs, Lobsters, and Crayfish">
       <p>
@@ -19,7 +19,9 @@ export const Malacostraca = () => {
         terrestrial habitats. They are segmented animals, united by a common body plan comprising 20 body segments
         (rarely 21), and divided into a head, thorax, and abdomen.
       </p>
-      <StyledImage responsive={true} src="/pvulgaris_one.jpg" />
+      <StyledImage responsive="true" src="/crab.jpg" />
     </Page>
   );
 };
+
+export default Malacostraca;

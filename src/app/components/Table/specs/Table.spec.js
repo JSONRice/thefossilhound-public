@@ -59,7 +59,6 @@ describe("Table", () => {
         </Table>
       </ThemeProvider>
     );
-    console.log(wrapper.props())
     expect(wrapper.children().props().data).toEqual(fossilsMainDirectory);
   });
 

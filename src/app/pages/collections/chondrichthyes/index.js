@@ -8,7 +8,7 @@ const StyledImage = styled(Image)`
   height: 400px;
 `;
 
-export const Chondrichthyes = () => {
+const Chondrichthyes = () => {
   return (
     <Page title="Chondrichthyes: Sharks and Rays">
       <p>
@@ -21,7 +21,9 @@ export const Chondrichthyes = () => {
         Megalodon along with other orders such as Carcharhiniformes which includes other popular Hammerhead and Sandbar.
         Dive into the world of sharks and other marine predators through the table below.
       </p>
-      <StyledImage responsive={true} src="/great_white.jpg" />
+      <StyledImage responsive="true" src="/great_white.jpg" />
     </Page>
   );
 };
+
+export default Chondrichthyes;
