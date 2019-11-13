@@ -74,7 +74,13 @@ class FossilsStoryPage extends Component {
           tabletOverrideColumnConfiguration={columns.tablet}
           mobileOverrideColumnConfiguration={columns.mobile}
         >
-          {({ filter, filterPairs }) => <h1>Fossils Archive</h1>}
+          {({ filter }) => {
+            return (
+              <>
+                {/*TODO: MONDAY add some filters*/}
+              </>
+            );
+          }}
         </Table>
       </Container>
     );
