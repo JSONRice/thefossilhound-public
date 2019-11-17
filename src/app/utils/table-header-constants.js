@@ -4,17 +4,17 @@ export const TableHeaderConstants = {
       key: "kingdom",
       header: "kingdom",
       lineKey: "kingdomName",
-      width: "25%"
+      width: "20%"
     },
     {
       key: "phylum",
       header: "phylum",
-      width: "25%"
+      width: "20%"
     },
     {
       key: "class",
       header: "class",
-      width: "25%"
+      width: "20%"
     },
     {
       key: "link",
@@ -24,7 +24,7 @@ export const TableHeaderConstants = {
         filterKey: "collections"
       },
       type: "link",
-      width: "25%"
+      width: "20%"
     }
   ],
   tablet: [
@@ -32,12 +32,12 @@ export const TableHeaderConstants = {
       key: "kingdom",
       header: "kingdom",
       lineKey: "kingdomName",
-      width: "33.3333%"
+      width: "30%"
     },
     {
       key: "class",
       header: "class",
-      width: "33.3333%"
+      width: "30%"
     },
     {
       key: "link",
@@ -47,7 +47,7 @@ export const TableHeaderConstants = {
         filterKey: "collections"
       },
       type: "link",
-      width: "33.3333%"
+      width: "30%"
     }
   ],
   mobile: [

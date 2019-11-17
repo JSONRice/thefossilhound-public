@@ -216,7 +216,7 @@ export class Table extends Component {
     let rows = Object.keys(filterPairs).reduce((acc, key) => {
       let filterValue = filterPairs[key].filterValue;
       let filterType = filterPairs[key].filterType;
-      if (key === "*") {
+      if (key === DEFAULT_KEY) {
         return acc.filter(this.filterAll(filterValue, filterType));
       } else {
         return acc.filter(item => {

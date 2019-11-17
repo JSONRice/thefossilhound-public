@@ -32,7 +32,7 @@ class CustomDocument extends Document {
     const { lang = "eng" } = this.props;
 
     return (
-      <html lang="en" style={{ height: "100%", backgroundColor: "#9d9d9d" }}>
+      <html lang="en" style={{ height: "100%", backgroundColor: "#333" }}>
       <Head>
         <link rel="icon" href="/favicon.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes"/>

@@ -84,10 +84,30 @@ class CollectionsContent extends React.PureComponent {
           tabletOverrideColumnConfiguration={columns.tablet}
           mobileOverrideColumnConfiguration={columns.mobile}
         >
-          {({ filter }) => {
+          {({ filter, clear }) => {
             return (
               <>
-                {/*TODO: MONDAY add some filters*/}
+                <Filter>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      onChange={e => filter(e.currentTarget.value)}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="filterCriteria">Class:&nbsp;</label>
+                    <select
+                      id="filterCriteria"
+                      onChange={e => filter(e.currentTarget.value, "class")}
+                    >
+                      <option value="">All</option>
+                      <option value="chondrichthyes">Chondrichthyes</option>
+                      <option value="malacostraca">Malacostraca</option>
+                      <option value="trilobita">Trilobita</option>
+                    </select>
+                  </div>
+                </Filter>
               </>
             );
           }}

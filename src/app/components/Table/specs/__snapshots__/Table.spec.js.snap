@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table renders correctly and snapshots 1`] = `
+Array [
+  <h1>
+    Hello Spec
+  </h1>,
+  <article
+    className="Table__TableContainer-sc-1fgjbjf-0 jFQjgj"
+  >
+    <div
+      className="Header-sc-1ndpwj3-0 fnmvWP"
+    >
+      <div
+        className="Cell__StyledCell-sc-18a70e-0 iADFcx"
+        onClick={[Function]}
+        width="2.5%"
+      >
+        <div
+          className="Icon__StyledIcon-sc-1k2g4fb-0 cWLQeP"
+          color="#0091bc"
+          fontFamily="fontFamilyGlyphiconsHalflings"
+          fontSize={10}
+          name="triangleRight"
+        />
+      </div>
+      <div
+        className="HeaderCell__Cell-sc-1lytdth-0 idxTJJ"
+        onClick={[Function]}
+        width="20%"
+      >
+        kingdom
+      </div>
+      <div
+        className="HeaderCell__Cell-sc-1lytdth-0 idxTJJ"
+        onClick={[Function]}
+        width="20%"
+      >
+        phylum
+      </div>
+      <div
+        className="HeaderCell__Cell-sc-1lytdth-0 idxTJJ"
+        onClick={[Function]}
+        width="20%"
+      >
+        class
+      </div>
+      <div
+        className="HeaderCell__Cell-sc-1lytdth-0 idxTJJ"
+        onClick={[Function]}
+        width="20%"
+      >
+        link
+      </div>
+    </div>
+    <section
+      className="Rows__RowsContainer-sc-5mr2tl-0 iDURcl"
+    >
+      <div
+        className="NewRow__Row-l7m67a-0 dWzBaz"
+      >
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 iADFcx"
+          width="2.5%"
+        />
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          Animalia
+        </div>
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          Chordata
+        </div>
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          Chondrichthyes
+        </div>
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          <span
+            className="StyledAppLink-sc-5zv1an-0 hisFbU"
+          >
+            <a
+              href="/collections/chondrichthyes"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              chondrichthyes
+            </a>
+          </span>
+        </div>
+      </div>
+      <div
+        className="NewRow__Row-l7m67a-0 dWzBaz"
+      >
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 iADFcx"
+          width="2.5%"
+        />
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          Animalia
+        </div>
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          Arthropoda
+        </div>
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          Malacostraca
+        </div>
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          <span
+            className="StyledAppLink-sc-5zv1an-0 hisFbU"
+          >
+            <a
+              href="/collections/malacostraca"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              malacostraca
+            </a>
+          </span>
+        </div>
+      </div>
+      <div
+        className="NewRow__Row-l7m67a-0 dWzBaz"
+      >
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 iADFcx"
+          width="2.5%"
+        />
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          Animalia
+        </div>
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          Arthropoda
+        </div>
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          Trilobita
+        </div>
+        <div
+          className="Cell__StyledCell-sc-18a70e-0 bAGDjV"
+          width="20%"
+        >
+          <span
+            className="StyledAppLink-sc-5zv1an-0 hisFbU"
+          >
+            <a
+              href="/collections/trilobita"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              trilobita
+            </a>
+          </span>
+        </div>
+      </div>
+    </section>
+  </article>,
+]
+`;
